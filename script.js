@@ -11,6 +11,7 @@ function setGrid()
 
     removeGrid();
     makeGrid(size);
+    setGridEventListener((e) => e.target.style.backgroundColor = 'red');
 }
 
 function makeGrid(size)
@@ -39,8 +40,31 @@ function removeGrid()
     }
 }
 
+function cleanGrid()
+{
+    //removes highlights from all grid-cells
+}
+
+function setGridEventListener(callback)
+{
+    const container = document.querySelector('#container');
+    container.childNodes.forEach(gridCell =>
+    {
+        gridCell.addEventListener('mouseenter', callback);
+    });
+}
+
 const setButton = document.querySelector('#set-button');
 setButton.addEventListener('click', setGrid);
 
 //Populate the grid initially with 16x16 divs 
 makeGrid(16);
+
+/*
+TODO:
+    - event listeners for each grid cell
+    - clear grid button
+    - buttons to change how the grid lights up
+    - pretty UI
+    - move container to global scope to reduce bloat?
+*/
