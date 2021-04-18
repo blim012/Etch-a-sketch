@@ -27,9 +27,8 @@
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     min-width: 50vw;
-    height: 50vw;
+    min-height: 50vw;
     width: auto;
     display: grid;
-    grid: repeat(16, 1fr) / repeat(16, auto);
     gap: 0px;
 }
