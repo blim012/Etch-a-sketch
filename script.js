@@ -42,16 +42,14 @@ function removeGrid()
 
 function cleanGrid()
 {
-    //removes highlights from all grid-cells
+    const container = document.querySelector('#container');
+    container.childNodes.forEach(gridCell => gridCell.style.backgroundColor = 'grey');
 }
 
 function setGridEventListener(callback)
 {
     const container = document.querySelector('#container');
-    container.childNodes.forEach(gridCell =>
-    {
-        gridCell.addEventListener('mouseenter', callback);
-    });
+    container.childNodes.forEach(gridCell => gridCell.addEventListener('mouseenter', callback));
 }
 
 const setButton = document.querySelector('#set-button');
