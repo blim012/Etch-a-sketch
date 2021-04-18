@@ -11,7 +11,7 @@ function setGrid()
 
     removeGrid();
     makeGrid(size);
-    setGridEventListener((e) => e.target.style.backgroundColor = 'red');
+    setGridEventListener(e => e.target.style.backgroundColor = 'red');
 }
 
 function makeGrid(size)
@@ -40,7 +40,7 @@ function removeGrid()
     }
 }
 
-function cleanGrid()
+function clearGrid()
 {
     const container = document.querySelector('#container');
     container.childNodes.forEach(gridCell => gridCell.style.backgroundColor = 'grey');
@@ -55,8 +55,12 @@ function setGridEventListener(callback)
 const setButton = document.querySelector('#set-button');
 setButton.addEventListener('click', setGrid);
 
+const clearButton = document.querySelector('#clear-button');
+clearButton.addEventListener('click', clearGrid);
+
 //Populate the grid initially with 16x16 divs 
-makeGrid(16);
+makeGrid(32);
+setGridEventListener(e => e.target.style.backgroundColor = 'red');
 
 /*
 TODO:
@@ -65,4 +69,8 @@ TODO:
     - buttons to change how the grid lights up
     - pretty UI
     - move container to global scope to reduce bloat?
+    - Maybe we can set a class for the container that defines what color is set?
+        - This way, we avoid a global
+        - For custom colors, we can set the class to the hex of the color
+          Then just grab the class name to set the eventlistener
 */
