@@ -1,3 +1,16 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.grid-cell
+{
+    background-color: grey;
+    width: 100%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
 #flex-wrapper
 {
     display: flex;
@@ -9,5 +22,14 @@
 
 #container
 {
-
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    min-width: 50vw;
+    height: 50vw;
+    width: auto;
+    display: grid;
+    grid: repeat(16, 1fr) / repeat(16, auto);
+    gap: 0px;
 }
