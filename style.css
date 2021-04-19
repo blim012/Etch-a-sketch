@@ -37,22 +37,23 @@ button:active
 input
 {
     appearance: none;
-    width: 1.1em;
-    height: 1.1em;
-    border: 1px solid grey;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #edf5fc;
     border-radius: 50%;
     transition: 0.1s all linear;
 }
 
 input:checked
 {
-    border: 0.45em solid grey;
+    border: 0.40em solid #edf5fc;
 }
 
 #color-picker
 {
     width: 2em;
-    border-radius: 25%;
+    margin-right: 0.5em;
+    border-radius: 5px;
 }
 
 #color-controls
@@ -61,6 +62,12 @@ input:checked
     flex-direction: column;
     align-items: baseline;
     margin: 0 auto;
+}
+
+.color-radio
+{
+    display: flex;
+    margin-bottom: 1em;
 }
 
 .grid-cell
@@ -85,7 +92,7 @@ input:checked
 
 #content
 {
-    background-color: #949fac;
+    background-color: #707982; 
     color: #eaf2fa;
     border: 10px solid #b8c5d6;
     border-radius: 20px;

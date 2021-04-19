@@ -101,9 +101,3 @@ document.addEventListener('DOMContentLoaded', () =>
     makeGrid(32);
     setGridEventListener();
 });
-
-/*
-TODO:
-    - pretty UI
-    - move container to global scope to reduce bloat?
-*/
