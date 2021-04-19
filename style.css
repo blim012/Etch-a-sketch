@@ -25,13 +25,13 @@ button
 
 button:hover
 {
-    border: 2px solid black;
+    border: 2px solid #272d2d;
 }
 
 button:active
 {
     transition: 0s border linear;
-    border: 2px solid red;
+    border: 2px solid #e0e9f3;
 }
 
 input
@@ -101,6 +101,7 @@ input:checked
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 10px 10px slategray;
 }
 
 header
