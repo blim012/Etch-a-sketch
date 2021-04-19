@@ -16,10 +16,22 @@
                     <p>Edit Grid</p>
                     <button id='set-button'>Set Dimensions</button>
                     <button id='clear-button'>Erase Everything</button>
+
                     <p>Edit Color</p>
-                    <button id='black-button'>Black</button>
-                    <button id='rainbow-button'>Rainbow</button>
-                    <button id='custom-button'>Custom</button>
+                    <div id='color-controls'>
+                        <div class='color-radio'>
+                            <input type='radio' id='black-button' name='color' value='black' checked>
+                            <label for='black-button'>Black</label>
+                        </div>
+                        <div class='color-radio'>
+                            <input type='radio' id='rainbow-button' name='color' value='rainbow'>
+                            <label for='rainbow-button'>Rainbow</label>
+                        </div>
+                        <div class='color-radio'>
+                            <input type='color' id='color-picker'>
+                            <label for='color-picker'>Custom</label>
+                        </div>
+                    </div>
                 </div>
 
                 <div id='container'></div>

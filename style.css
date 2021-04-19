@@ -3,6 +3,28 @@
     box-sizing: border-box;
 }
 
+input
+{
+    appearance: none;
+    width: 1.1em;
+    height: 1.1em;
+    border: 1px solid grey;
+    border-radius: 0.5em;
+}
+
+#color-picker
+{
+    width: 2em;
+    border-radius: 5px;
+}
+
+#color-controls
+{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
 .grid-cell
 {
     background-color: grey;
