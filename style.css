@@ -9,7 +9,13 @@ input
     width: 1.1em;
     height: 1.1em;
     border: 1px solid grey;
-    border-radius: 0.5em;
+    border-radius: 50%;
+    transition: 0.1s all linear;
+}
+
+input:checked
+{
+    border: 0.45em solid grey;
 }
 
 #color-picker

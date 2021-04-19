@@ -52,15 +52,35 @@ function setGridEventListener(callback)
     container.childNodes.forEach(gridCell => gridCell.addEventListener('mouseenter', callback));
 }
 
+//Set all event listeners and initialize the page
 document.addEventListener('DOMContentLoaded', () =>
 {
+    const container = document.querySelector('#container');
     const setButton = document.querySelector('#set-button');
     const clearButton = document.querySelector('#clear-button');
+    const blackRadio = document.querySelector('#black-button');
+    const rainbowRadio = document.querySelector('#rainbow-button');
+    const customRadio = document.querySelector('#color-picker');
+
+    const setCustomColor = e => 
+    {
+        container.className = e.target.value;
+        blackRadio.checked = false;
+        rainbowRadio.checked = false;
+    }
+
     setButton.addEventListener('click', setGrid);
     clearButton.addEventListener('click', clearGrid);
-    
+    blackRadio.addEventListener('click', () => container.className = 'black');
+    rainbowRadio.addEventListener('click', () => container.className = 'red');
+    customRadio.addEventListener('click', setCustomColor);
+    customRadio.addEventListener('change', setCustomColor);
+
+    container.className = 'black';
+    blackRadio.checked = true;
+
     makeGrid(32);
-    setGridEventListener(e => e.target.style.backgroundColor = 'red');
+    setGridEventListener(e => e.target.style.backgroundColor = container.className);
 });
 
 /*
@@ -68,8 +88,4 @@ TODO:
     - buttons to change how the grid lights up
     - pretty UI
     - move container to global scope to reduce bloat?
-    - Maybe we can set a class for the container that defines what color is set?
-        - This way, we avoid a global
-        - For custom colors, we can set the class to the hex of the color
-          Then just grab the class name to set the eventlistener
 */
