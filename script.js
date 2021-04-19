@@ -6,6 +6,7 @@ function setGrid()
     do
     {
         size = prompt('Please enter the size of the grid');
+        if(size === null) return;
         size > 0 && size <= 100 ? settingSize = false : alert('Please choose a number between 1 and 100');
     } while(settingSize);
 
@@ -103,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () =>
 
 /*
 TODO:
-    - buttons to change how the grid lights up
     - pretty UI
     - move container to global scope to reduce bloat?
 */
