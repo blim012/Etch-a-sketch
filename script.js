@@ -11,7 +11,7 @@ function setGrid()
 
     removeGrid();
     makeGrid(size);
-    setGridEventListener(e => e.target.style.backgroundColor = 'red');
+    setGridEventListener();
 }
 
 function makeGrid(size)
@@ -46,10 +46,28 @@ function clearGrid()
     container.childNodes.forEach(gridCell => gridCell.style.backgroundColor = 'grey');
 }
 
-function setGridEventListener(callback)
+//Should always be called after makeGrid
+function setGridEventListener()
 {
     const container = document.querySelector('#container');
+    const callback = function(e)
+    { 
+        container.className === 'rainbow' ? e.target.style.backgroundColor = randomColor() : 
+                                            e.target.style.backgroundColor = container.className;
+    }
     container.childNodes.forEach(gridCell => gridCell.addEventListener('mouseenter', callback));
+}
+
+function randomColor()
+{
+    const hex = '0123456789ABCDEF';
+    let color = '#';
+    for(let i = 0; i < 6; i++)
+    {
+        color += hex[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
 }
 
 //Set all event listeners and initialize the page
@@ -72,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () =>
     setButton.addEventListener('click', setGrid);
     clearButton.addEventListener('click', clearGrid);
     blackRadio.addEventListener('click', () => container.className = 'black');
-    rainbowRadio.addEventListener('click', () => container.className = 'red');
+    rainbowRadio.addEventListener('click', () => container.className = 'rainbow');
     customRadio.addEventListener('click', setCustomColor);
     customRadio.addEventListener('change', setCustomColor);
 
@@ -80,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () =>
     blackRadio.checked = true;
 
     makeGrid(32);
-    setGridEventListener(e => e.target.style.backgroundColor = container.className);
+    setGridEventListener();
 });
 
 /*
