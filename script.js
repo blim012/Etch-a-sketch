@@ -44,7 +44,7 @@ function removeGrid()
 function clearGrid()
 {
     const container = document.querySelector('#container');
-    container.childNodes.forEach(gridCell => gridCell.style.backgroundColor = 'grey');
+    container.childNodes.forEach(gridCell => gridCell.style.backgroundColor = 'white');
 }
 
 //Should always be called after makeGrid

@@ -3,6 +3,27 @@
     box-sizing: border-box;
 }
 
+button
+{
+    appearance: none;
+    background-color:antiquewhite;
+    border: 2px solid antiquewhite;
+    border-radius: 10px;
+    transition: 0.2s all linear;
+    min-width: 100%;
+    width: 100%;
+}
+
+button:hover
+{
+    border: 2px solid red;
+}
+
+button:active
+{
+    border: 4px solid red;
+}
+
 input
 {
     appearance: none;
@@ -21,7 +42,7 @@ input:checked
 #color-picker
 {
     width: 2em;
-    border-radius: 5px;
+    border-radius: 25%;
 }
 
 #color-controls
@@ -29,11 +50,12 @@ input:checked
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    margin: 0 auto;
 }
 
 .grid-cell
 {
-    background-color: grey;
+    background-color: white;
     width: 100%;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -46,21 +68,30 @@ input:checked
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #content
 {
     border: 2px solid;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-#buttons
+#grid-controls
 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid red;
+    margin: 0 auto;
+    flex-grow: 0.5;
 }
 
 #container
@@ -74,4 +105,5 @@ input:checked
     width: auto;
     display: grid;
     gap: 0px;
+    margin: 0 auto;
 }
