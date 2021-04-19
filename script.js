@@ -52,20 +52,19 @@ function setGridEventListener(callback)
     container.childNodes.forEach(gridCell => gridCell.addEventListener('mouseenter', callback));
 }
 
-const setButton = document.querySelector('#set-button');
-setButton.addEventListener('click', setGrid);
-
-const clearButton = document.querySelector('#clear-button');
-clearButton.addEventListener('click', clearGrid);
-
-//Populate the grid initially with 16x16 divs 
-makeGrid(32);
-setGridEventListener(e => e.target.style.backgroundColor = 'red');
+document.addEventListener('DOMContentLoaded', () =>
+{
+    const setButton = document.querySelector('#set-button');
+    const clearButton = document.querySelector('#clear-button');
+    setButton.addEventListener('click', setGrid);
+    clearButton.addEventListener('click', clearGrid);
+    
+    makeGrid(32);
+    setGridEventListener(e => e.target.style.backgroundColor = 'red');
+});
 
 /*
 TODO:
-    - event listeners for each grid cell
-    - clear grid button
     - buttons to change how the grid lights up
     - pretty UI
     - move container to global scope to reduce bloat?
