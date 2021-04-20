@@ -12,6 +12,13 @@ body
     padding: 0;
 }
 
+h3
+{
+    text-decoration: underline;
+    text-decoration-color: #b8c5d6;
+    text-decoration-style: double;
+}
+
 button
 {
     appearance: none;
