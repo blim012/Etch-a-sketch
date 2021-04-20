@@ -1,5 +1,6 @@
 *
 {
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -14,8 +15,8 @@ body
 button
 {
     appearance: none;
-    background-color:antiquewhite;
-    border: 2px solid antiquewhite;
+    background-color:azure;
+    border: 2px solid azure;
     border-radius: 10px;
     transition: 0.2s border linear;
     min-width: 100%;
@@ -31,7 +32,7 @@ button:hover
 button:active
 {
     transition: 0s border linear;
-    border: 2px solid #e0e9f3;
+    border: 2px solid #b8c5d6;
 }
 
 input
@@ -39,14 +40,14 @@ input
     appearance: none;
     width: 1em;
     height: 1em;
-    border: 1px solid #edf5fc;
+    border: 1px solid azure;
     border-radius: 50%;
     transition: 0.1s all linear;
 }
 
 input:checked
 {
-    border: 0.40em solid #edf5fc;
+    border: 0.40em solid azure;
 }
 
 #color-picker
@@ -83,7 +84,7 @@ input:checked
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     height: 100%;
     margin: 0;
@@ -97,7 +98,7 @@ input:checked
     border: 10px solid #b8c5d6;
     border-radius: 20px;
     width: auto;
-    max-height: 80vh;
+    min-height: 45vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,18 +107,16 @@ input:checked
 
 header
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 2em;
+    font-size: 1.2em;
     width: 100%;
-    height: 100%;
     color: #e0e9f3;
 }
 
 footer
 {
+    margin-bottom: 2em;
     width: 100%;
-    height: 100%;
     color: #e0e9f3;
 }
 
@@ -132,7 +131,6 @@ footer
 
 #container
 {
-    align-self: flex-start;
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-right: 1px solid black;
@@ -142,5 +140,5 @@ footer
     min-height: 40vw;
     display: grid;
     gap: 0px;
-    
+    margin-right: 1em; 
 }
