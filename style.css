@@ -114,7 +114,7 @@ input:checked
 
 header
 {
-    margin-top: 2em;
+    margin: 2em 0;
     font-size: 1.2em;
     width: 100%;
     color: #e0e9f3;
@@ -122,9 +122,13 @@ header
 
 footer
 {
-    margin-bottom: 2em;
     width: 100%;
     color: #e0e9f3;
+}
+
+img
+{
+    margin: 3em;
 }
 
 #grid-controls
